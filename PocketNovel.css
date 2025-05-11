@@ -1,0 +1,91 @@
+/* PocketNovel.css */
+
+.pocket-novel-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.pocket-novel-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.pocket-novel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.pocket-novel-card-wrapper {
+  transition: transform 0.3s ease;
+}
+
+.pocket-novel-card-wrapper:hover {
+  transform: translateY(-5px);
+}
+
+.pocket-novel-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.pocket-novel-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.pocket-novel-image-container {
+  position: relative;
+  padding-top: 150%; /* Aspect ratio for poster */
+  overflow: hidden;
+}
+
+.pocket-novel-poster {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.pocket-novel-card:hover .pocket-novel-poster {
+  transform: scale(1.05);
+}
+
+.pocket-novel-card-text {
+  padding: 1rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  background-color: #fff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .pocket-novel-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pocket-novel-title {
+    font-size: 2rem;
+  }
+  
+  .pocket-novel-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}

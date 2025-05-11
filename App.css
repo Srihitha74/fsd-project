@@ -1,0 +1,259 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Nunito:wght@400;700&display=swap');
+
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* === UpNavBar Styling === */
+.up-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+/* Logo & Brand */
+.brand {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 42px;
+    width: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 12px;
+    border: 2px solid #6c757d;
+}
+
+.brand-name {
+    font-size: 26px;
+    font-weight: 600;
+    color: #343a40;
+    letter-spacing: 1px;
+    font-family: 'Nunito', sans-serif;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #343a40;
+    font-weight: 600;
+    font-size: 16px;
+    transition: 0.3s ease-in-out;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+.nav-links a:hover {
+    color: #007bff;
+    background: rgba(0, 123, 255, 0.1);
+}
+
+/* Search Bar */
+.search-bar {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar input {
+    width: 400px;
+    padding: 12px 18px;
+    border-radius: 25px;
+    border: 1px solid #ced4da;
+    font-size: 16px;
+    background-color: #f1f3f5;
+    outline: none;
+    transition: 0.3s ease-in-out;
+}
+
+.search-bar input:focus {
+    border-color: #007bff;
+    background-color: white;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+/* Right Section (Dropdown + Auth Buttons) */
+.right-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Dropdown */
+.dropdown select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    background: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.dropdown select:hover {
+    border-color: #007bff;
+}
+
+/* Auth Buttons */
+.login-btn, .signup-btn {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 6px;
+    transition: 0.3s ease-in-out;
+    border: none;
+}
+
+.login-btn {
+    background-color: #007bff;
+}
+
+.login-btn:hover {
+    background-color: #0056b3;
+}
+
+.signup-btn {
+    background-color: #ff4081;
+}
+
+.signup-btn:hover {
+    background-color: #d81b60;
+}
+
+/* === SideNavBar Styling === */
+.sidebar {
+    width: 260px;
+    background-color: #f8f9fa;
+    padding: 15px; /* Reduced padding */
+    height: 100vh; /* Full height */
+    position: fixed;
+    top: 70px;
+    left: 0;
+    overflow-y: auto; /* Enable scrolling */
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+    scrollbar-width: thin; /* Small scrollbar */
+}
+
+/* Sidebar Header */
+.sidebar h3 {
+    font-size: 18px; /* Adjusted size */
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #343a40;
+    font-family: 'Nunito', sans-serif;
+}
+
+/* Sidebar List Styling */
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    display: flex;
+    align-items: center;
+    padding: 10px 12px; /* Adjusted spacing */
+    transition: background 0.3s ease-in-out;
+    border-radius: 6px;
+}
+
+.sidebar ul li:hover {
+    background: rgba(0, 0, 0, 0.07);
+}
+
+/* Sidebar Links */
+.sidebar ul li a {
+    text-decoration: none;
+    color: #495057;
+    font-size: 15px; /* Adjusted size */
+    margin-left: 8px;
+    flex-grow: 1;
+    font-weight: 500;
+}
+
+/* Sidebar Icons */
+.menu-icon {
+    width: 28px; /* Adjusted */
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+    border: 1.5px solid #dee2e6;
+}
+
+/* === Main Content Adjustments === */
+.main-content {
+    margin-top: 70px;
+    padding: 25px;
+    /* Remove the fixed left margin */
+    position: relative; /* Needed for absolute positioning of InBetweenPlayer if you choose that */
+}
+
+.main-content.with-sidebar {
+    margin-left: 260px; /* Apply left margin only when sidebar is present */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .search-bar input {
+        width: 240px;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+        height: auto;
+        padding: 12px;
+    }
+
+    .right-section {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 200px;
+        padding: 10px;
+    }
+
+    .sidebar ul li {
+        padding: 8px 10px;
+    }
+
+    .sidebar ul li a {
+        font-size: 14px;
+    }
+
+    .menu-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .main-content.with-sidebar {
+        margin-left: 200px; /* Adjust for smaller sidebar */
+    }
+}

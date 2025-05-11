@@ -1,0 +1,190 @@
+/* NovelStories.css */
+
+/* Main Container */
+.audio-stories-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+/* Title Styling */
+.audio-stories-title {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  color: #2c3e50;
+  text-transform: capitalize;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* Grid Layout - 2 columns */
+.audio-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.5rem;
+  padding: 0 1rem;
+}
+
+/* Audio Card Styling */
+.audio-item {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.audio-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Header Section */
+.audio-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  gap: 1.5rem;
+}
+
+.audio-title {
+  margin: 0;
+  font-size: 1.3rem;
+  color: #2d3748;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+}
+
+/* Duration Badge */
+.audio-duration {
+  background-color: #f1f5f9;
+  color: #4a5568;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+/* Play Button */
+.play-button {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  margin-left: 1rem;
+  box-shadow: 0 4px 8px rgba(99, 102, 241, 0.2);
+}
+
+.play-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(99, 102, 241, 0.3);
+}
+
+.play-button.playing {
+  background: linear-gradient(135deg, #ef4444, #f97316);
+}
+
+/* Progress Bar */
+.progress-container {
+  width: 100%;
+  height: 6px;
+  background-color: #edf2f7;
+  border-radius: 3px;
+  margin-top: 1.5rem;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  width: 0%;
+  transition: width 0.1s linear;
+  border-radius: 3px;
+}
+
+/* Active Playing State */
+.audio-item.playing {
+  border-left: 6px solid #6366f1;
+  background-color: #f8fafc;
+}
+
+/* No Audios Message */
+.no-audios {
+  text-align: center;
+  padding: 3rem;
+  background-color: #f8fafc;
+  border-radius: 16px;
+  color: #64748b;
+  font-size: 1.2rem;
+  grid-column: 1 / -1;
+  border: 1px dashed #e2e8f0;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .audio-list {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .audio-stories-container {
+    padding: 2rem 1.5rem;
+  }
+  
+  .audio-item {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .audio-list {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0;
+  }
+  
+  .audio-stories-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .audio-stories-container {
+    padding: 1.5rem 1rem;
+  }
+  
+  .audio-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .audio-duration {
+    align-self: flex-start;
+  }
+  
+  .play-button {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+}

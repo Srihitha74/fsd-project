@@ -1,0 +1,140 @@
+/* Fullscreen wrapper with background image */
+.radio-wrapper {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background: url(C:\Users\Srihitha\OneDrive\Desktop\kalbho_gang\public\images\radio2.jpg) no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Dark transparent overlay for content */
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+  }
+  
+  /* Title */
+  .overlay h2 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+  }
+  
+  /* Play/Pause Button */
+  .play-button {
+    background-color: #ff4d4d;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 50px;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 25px;
+  }
+  
+  .play-button:hover {
+    background-color: #ff1a1a;
+  }
+  
+  .pause-icon,
+  .play-icon {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  /* Station Switch Buttons */
+  .station-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  
+  .station-btn {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: 1px solid white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-size: 14px;
+  }
+  
+  .station-btn:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+  }
+  
+  .station-btn.active {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+  }
+  
+  /* Sound Wave Animation */
+  .sound-waves {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: 20px;
+  }
+  
+  .sound-waves span {
+    display: block;
+    width: 5px;
+    height: 20px;
+    background-color: #00ffcc;
+    animation: wave 1s infinite ease-in-out;
+  }
+  
+  .sound-waves span:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+  .sound-waves span:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+  .sound-waves span:nth-child(4) {
+    animation-delay: 0.3s;
+  }
+  .sound-waves span:nth-child(5) {
+    animation-delay: 0.4s;
+  }
+  
+  @keyframes wave {
+    0%, 100% {
+      height: 20px;
+    }
+    50% {
+      height: 40px;
+    }
+  }
+  
+  /* Responsive tweaks */
+  @media (max-width: 768px) {
+    .overlay {
+      padding: 25px;
+    }
+  
+    .overlay h2 {
+      font-size: 1.5rem;
+    }
+  
+    .play-button {
+      font-size: 1.5rem;
+    }
+  
+    .station-btn {
+      font-size: 12px;
+      padding: 8px 16px;
+    }
+  }
+  

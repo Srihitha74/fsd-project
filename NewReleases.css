@@ -1,0 +1,343 @@
+/* NewReleases.css */
+.new-releases-page {
+    padding: 20px;
+    background-color: #f0f0f0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.new-releases-page.playing {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    width: 90%;
+    max-width: 1200px;
+    color: rgb(15, 15, 15);
+}
+
+.new-releases-page.playing .section-title {
+    color: #eee;
+}
+
+.releases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 90%;
+    max-width: 1200px;
+    z-index: 1;
+}
+
+.release-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    height: 360px;
+    transition: transform 0.2s ease;
+}
+
+.release-card:hover {
+    transform: scale(1.05);
+}
+
+.song-poster {
+    width: 100%;
+    height: 180px;
+    border-radius: 6px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.play-btn {
+    background-color: #2a3700;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.2s ease;
+    align-self: center;
+    margin-bottom: 8px;
+    z-index: 2;
+}
+
+.play-btn:hover {
+    transform: scale(1.1);
+}
+
+.song-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 5px;
+}
+
+.song-name {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #403c3c;
+}
+
+.song-artist {
+    font-size: 12px;
+    color: #3f433f;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Now Playing Overlay */
+.now-playing-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.now-playing-container {
+    display: flex;
+    background-color: #181818;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.9);
+    position: relative;
+    width: 80%;
+    max-width: 960px;
+    height: auto;
+    max-height: 600px;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.close-overlay-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    color: #ccc;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 11;
+}
+
+.close-overlay-btn:hover {
+    color: white;
+}
+
+.left-panel {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative; /* Important for absolute positioning */
+    overflow: hidden;
+}
+
+/* Vinyl Record Styling */
+.vinyl-record {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #d01414 10%, #111 40%, #444 60%, #000 100%);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+    clip-path: inset(0 0 0 50%);
+    position: relative;
+    z-index: 1;
+    animation: rotate 5s linear infinite;
+}
+.vinyl-record.rotating {
+    animation: spin 3s linear infinite;
+}
+
+.vinyl-hole {
+    width: 20px;
+    height: 20px;
+    background: #222;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 2;
+}
+
+.vinyl-reflection {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    width: 60%;
+    height: 600%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 80%);
+    transform: rotate(-20deg);
+    pointer-events: none;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.poster-box {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 2; /* Higher than the CD */
+}
+
+.poster-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.right-panel {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.song-info-header {
+    text-align: right;
+    margin-bottom: 15px;
+}
+
+.now-playing-name {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.now-playing-artist {
+    font-size: 1em;
+    color: #aaa;
+}
+
+.player-controls {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.control-btn {
+    background: none;
+    color: #fff;
+    border: 1px solid #555;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5em;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: border-color 0.2s ease;
+}
+
+.control-btn:hover {
+    border-color: #fff;
+}
+
+.play-pause-btn {
+    font-size: 1.8em;
+    width: 55px;
+    height: 55px;
+    background-color: #76c7c0;
+}
+
+.progress-bar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 80%;
+}
+
+.progress-bar-time {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    color: #eee;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    border-radius: 4px;
+    -webkit-appearance: none;
+    background: #555;
+    outline: none;
+}
+.cd-wrapper {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidde;
+    transition: transform 0.3s ease;
+}
+
+.cd-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.cd-album-art {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90px;
+    height: 90px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    object-fit: cover;
+    z-index: 2;
+}
+
+.cd-wrapper.rotating {
+    animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}

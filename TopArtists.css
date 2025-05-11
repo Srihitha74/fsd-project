@@ -1,0 +1,72 @@
+.top-artists-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: calc(100vh - 60px); /* Example: Assuming your top navbar is 60px high */
+    width: 100%; /* Take full width when it's the main content */
+    margin-left: 0; /* No left margin needed when it's the main content */
+    padding-top: 80px; /* Example: Space from UpNavbar (60px + 20px spacing) */
+    background-color: #f7f7f7; /* Slight grey background */
+    overflow: auto;
+    box-sizing: border-box; /* Important for padding and width */
+}
+
+/* Title Styling */
+.top-artists-title {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px; /* Increased gap from navbar */
+    color: #111;
+}
+
+/* Grid Layout */
+.top-artists-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Adjust minmax for circle size */
+    gap: 40px; /* Space between circles */
+    justify-items: center;
+    width: 90%; /* Take up most of the available width */
+    max-width: 1200px; /* Optional: Limit maximum width */
+    padding-bottom: 50px; /* Bottom spacing */
+}
+
+/* Artist Cards (Now mainly for positioning) */
+.artist-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    /* Remove background, border, padding, and shadow of the box */
+}
+
+/* Artist Images (Circles) */
+.artist-image {
+    width: 180px; /* Adjust size of the circle */
+    height: 180px;
+    border-radius: 50%; /* Make it a circle */
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow effect */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    margin-bottom: 10px; /* Space between circle and name */
+}
+
+/* Hover Effect */
+.artist-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* More glow effect */
+}
+
+/* Artist Name */
+.artist-name {
+    font-size: 18px; /* Adjust font size */
+    font-weight: bold;
+    color: #222;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+    overflow: hidden; /* Handle long names */
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%; /* Ensure name stays within the circle's container width */
+    text-align: center; /* Center the name below the circle */
+}

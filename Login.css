@@ -1,0 +1,125 @@
+/* Main Container */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #0f0f2d, #1b1b3a); /* Dark blue gradient background */
+  padding: 20px;
+}
+
+/* Form Box */
+.login-form-container {
+  background-color: #1b1b1b; /* Semi-black background */
+  width: 100%;
+  max-width: 400px;
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.85);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Form Title */
+.login-title {
+  font-size: 26px;
+  font-weight: bold;
+  color: #00aaff; /* Sky Blue */
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: linear-gradient(to right, #0099ff, #33ccff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeInDown 0.8s ease-in-out;
+}
+
+/* Input Group */
+.input-group {
+  margin-bottom: 15px;
+}
+
+/* Input Fields */
+.login-input {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  border: 1px solid #555;
+  border-radius: 8px;
+  background-color: #333;
+  color: #fff;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.login-input:focus {
+  outline: none;
+  border: 2px solid #00aaff;
+  background-color: #444;
+  box-shadow: 0 0 8px rgba(0, 170, 255, 0.5);
+}
+
+/* Log In Button */
+.login-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(to right, #0099ff, #33ccff);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+/* Hover and Click Effects */
+.login-btn:hover {
+  background: linear-gradient(to right, #007acc, #00bfff);
+  transform: translateY(-2px);
+}
+
+.login-btn:active {
+  transform: scale(0.98);
+}
+
+/* Redirect Text */
+.signup-redirect {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.signup-redirect a {
+  color: #e92828;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.signup-redirect a:hover {
+  text-decoration: underline;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Title Animation */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
